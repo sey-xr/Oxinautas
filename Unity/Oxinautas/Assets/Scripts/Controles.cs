@@ -49,7 +49,7 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                     ""name"": ""Falling"",
                     ""type"": ""Value"",
                     ""id"": ""aed539a9-8a19-474d-a1a4-a6efdc9b5776"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
