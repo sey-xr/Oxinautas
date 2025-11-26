@@ -4133,38 +4133,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!1 &683884514
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 683884515}
-  m_Layer: 0
-  m_Name: Oxinauta
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &683884515
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 683884514}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.52, y: -7.93, z: 0.061125316}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2123466608}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &808986012
 GameObject:
   m_ObjectHideFlags: 0
@@ -7161,7 +7129,7 @@ Animator:
   m_GameObject: {fileID: 2123466605}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 851bd6662dc094493ac90378ceb3981e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1870a1caa6a8d4609a2a2b458c1f7dc6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7237,11 +7205,11 @@ Transform:
   m_GameObject: {fileID: 2123466605}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.14, y: 6.43, z: -0.061125316}
+  m_LocalPosition: {x: -7.38, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 683884515}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2123466609
 Rigidbody2D:
@@ -7372,7 +7340,7 @@ SceneRoots:
   - {fileID: 1497408489}
   - {fileID: 1719334922}
   - {fileID: 177648253}
-  - {fileID: 683884515}
   - {fileID: 219523811}
   - {fileID: 380467788}
   - {fileID: 808986014}
+  - {fileID: 2123466608}
