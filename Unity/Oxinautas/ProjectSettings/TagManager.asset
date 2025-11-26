@@ -41,3 +41,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Amb_Muros
+    uniqueID: 647522139
+    locked: 0
+  - name: Amb_Carnes
+    uniqueID: 1342781275
+    locked: 0
+  - name: Amb_Piso
+    uniqueID: 3565246665
+    locked: 0
+  - name: Enemies
+    uniqueID: 3407800017
+    locked: 0
+  - name: PowerUps
+    uniqueID: 1781420915
+    locked: 0
+  - name: Player
+    uniqueID: 630888285
+    locked: 0
+  - name: UI
+    uniqueID: 1609756697
+    locked: 0
+  - name: Amb_Marcos
+    uniqueID: 2097523967
+    locked: 0
