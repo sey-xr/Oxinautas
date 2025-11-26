@@ -5,7 +5,7 @@ public class GatherInput : MonoBehaviour
     private Controls controls;
     [SerializeField] private float _valueX;
 
-    public global::System.Single ValueX { get => _valueX; set => _valueX = value; }
+    public float ValueX { get => _valueX; set => _valueX = value; }
 
     private void Awake()
     {

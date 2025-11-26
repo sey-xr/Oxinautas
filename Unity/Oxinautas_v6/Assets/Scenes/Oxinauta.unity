@@ -7142,7 +7142,8 @@ GameObject:
   - component: {fileID: 2123466609}
   - component: {fileID: 2123466610}
   - component: {fileID: 2123466612}
-  - component: {fileID: 2123466611}
+  - component: {fileID: 2123466613}
+  - component: {fileID: 2123466614}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7306,19 +7307,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.012724161, y: -0.03310746}
   m_Size: {x: 0.8388257, y: 0.8388258}
   m_Direction: 0
---- !u!114 &2123466611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123466605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04a66216bdc2c47cabc1c61d0c2da31c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _valueX: 4
 --- !u!114 &2123466612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7331,7 +7319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 1762bc9611cd54764a9fb7af9fa38cde, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -7349,6 +7337,32 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2123466613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123466605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f9e032efb33441ae88b759be4be23ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _valueX: 0
+--- !u!114 &2123466614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123466605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6029f903a4f3d421ea29b4869240aa4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
