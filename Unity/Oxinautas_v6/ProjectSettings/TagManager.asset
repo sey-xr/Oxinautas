@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Ground
   - 
   - 
   - 
@@ -55,6 +55,9 @@ TagManager:
     locked: 0
   - name: PowerUps
     uniqueID: 4283280931
+    locked: 0
+  - name: UI
+    uniqueID: 3617819081
     locked: 0
   m_RenderingLayers:
   - Default
