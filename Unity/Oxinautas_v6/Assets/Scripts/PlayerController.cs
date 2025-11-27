@@ -4,9 +4,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Components")]
+    [SerializeField] private Transform m_transform;
     private Rigidbody2D m_rigidbody2D;
     private GatherInput m_gatherInput;
-    [SerializeField] private Transform m_transform;
     private Animator m_animator;
 
     [Header("Movement Settings")]
@@ -108,11 +108,11 @@ public class PlayerController : MonoBehaviour
             m_transform.localScale = new Vector3(-m_transform.localScale.x, 1, 1);
             direction *= -1;
         }
-        else if (m_gatherInput.ValueX * direction > 0)
-        {
-            m_transform.localScale = new Vector3(m_transform.localScale.x, 1, 1);
-            direction *= 1;
-        }
+        // else if (m_gatherInput.ValueX * direction > 0)
+        // {
+        //     m_transform.localScale = new Vector3(m_transform.localScale.x, 1, 1);
+        //     direction *= 1;
+        // }
     }
     private void Jump()
     {
@@ -134,6 +134,6 @@ public class PlayerController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(m_transform.position, new Vector2(m_transform.position.x + checkWallDistance * direction, m_transform.position.y));
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.green;
     }
 }
