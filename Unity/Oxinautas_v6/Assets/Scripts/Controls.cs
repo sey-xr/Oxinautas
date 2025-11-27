@@ -596,7 +596,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -607,7 +607,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""path"": ""<Touchscreen>/Press"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Touch"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -618,7 +618,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": ""MultiTap"",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""DobleJump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -629,7 +629,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""path"": ""<Touchscreen>/touch*/Press"",
                     ""interactions"": ""MultiTap"",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Touch"",
                     ""action"": ""DobleJump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -651,7 +651,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Punch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -659,10 +659,10 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""16eff38c-ac03-4e00-80df-0eb7a4534df1"",
-                    ""path"": ""<Touchscreen>/displayIndex"",
+                    ""path"": ""<Touchscreen>/primaryTouch/press"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Touch"",
                     ""action"": ""Punch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -684,7 +684,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -695,7 +695,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -716,8 +716,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""id"": ""ad8e4d56-bfe4-4adf-85fe-d2312c3d7624"",
                     ""path"": ""<Touchscreen>/delta/left"",
                     ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
+                    ""processors"": ""AxisDeadzone"",
+                    ""groups"": "";Touch"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -727,8 +727,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""id"": ""8fb97269-6809-434f-b447-c44f1c79bc5b"",
                     ""path"": ""<Touchscreen>/delta/right"",
                     ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
+                    ""processors"": ""AxisDeadzone"",
+                    ""groups"": "";Touch"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
