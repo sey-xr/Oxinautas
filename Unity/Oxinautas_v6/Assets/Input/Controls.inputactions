@@ -571,7 +571,7 @@
                 {
                     "name": "",
                     "id": "638de20c-db73-434b-af7e-b6eeacc0ba16",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -593,7 +593,7 @@
                 {
                     "name": "",
                     "id": "676add93-4cd6-4d66-a344-a1845391762e",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "MultiTap",
                     "processors": "",
                     "groups": "",
@@ -626,7 +626,7 @@
                 {
                     "name": "",
                     "id": "dd67dc28-7d17-4d12-895a-db12421183b5",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
