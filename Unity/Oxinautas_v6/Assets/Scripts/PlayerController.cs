@@ -1,8 +1,16 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Animator Hash IDs
+    private int idIsGrounded;
+    private int idSpeed;
+    private int idIsWallDetected;
+    private int idKnockback;
+    private int idDoubleJump;
+
     [Header("Components")]
     [SerializeField] private Transform m_transform;
     private Rigidbody2D m_rigidbody2D;
@@ -18,7 +26,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int extraJumps;
     [SerializeField] private int counterExtraJumps;
     [SerializeField] private bool canDoubleJump;
-    private int idSpeed;
 
     [Header("Ground Settings")]
     [SerializeField] private Transform lFoot;
@@ -28,11 +35,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isGrounded;
     [SerializeField] private float rayLength;
     [SerializeField] private LayerMask groundLayer;
-    private int idIsGrounded;
 
     [Header("Wall Settings")]
     [SerializeField] private float checkWallDistance;
     [SerializeField] private bool isWallDetected;
+    // [SerializeField] private bool canWallSlide;
+    // [SerializeField] private float slideSpeed;
+    // [SerializeField] private Vector2 wallJumpForce;
+    // [SerializeField] private bool isWallJumping;
+    // [SerializeField] private float wallJumpDuration;
+
+
+    [Header("Knock Settings")]
+    [SerializeField] private bool isKnocked;
+    [SerializeField] private bool canBeKnocked;
+    [SerializeField] private Vector2 knockPower;
+    [SerializeField] private float knockedDuration;
 
     void Awake()
     {
@@ -47,6 +65,9 @@ public class PlayerController : MonoBehaviour
     {
         idSpeed = Animator.StringToHash("Speed");
         idIsGrounded = Animator.StringToHash("isGrounded");
+        idIsWallDetected = Animator.StringToHash("isWallDetected");
+        idKnockback = Animator.StringToHash("knockback");
+        idDoubleJump = Animator.StringToHash("canDoubleJump");
         rFoot = GameObject.Find("PieD").GetComponent<Transform>();
         lFoot = GameObject.Find("PieI").GetComponent<Transform>();
         counterExtraJumps = extraJumps;
@@ -63,6 +84,7 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if(isKnocked) return;
         CheckCollision();
         Move();
         Jump();
@@ -131,9 +153,30 @@ public class PlayerController : MonoBehaviour
         }
         m_gatherInput.IsJumping = false;
     }
+    private void DoubleJump()
+    {
+        m_animator.SetTrigger(idDoubleJump);
+        // TODO: Double Jump Logic
+        //m_rigidbody2D.linearVelocity = new Vector2(speed * m_gatherInput.ValueX, jumpForce);
+    }
+    public void Knockback()
+    {
+        StartCoroutine(KnockbackRoutine());
+        m_rigidbody2D.linearVelocity = new Vector2(knockPower.x * -direction, knockPower.y);
+        m_animator.SetTrigger(idKnockback);
+    }
+
+    private IEnumerator KnockbackRoutine()
+    {
+        isKnocked = true;
+        canBeKnocked = false;
+        yield return new WaitForSeconds(knockedDuration);
+        isKnocked = false;
+        canBeKnocked = true;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(m_transform.position, new Vector2(m_transform.position.x + checkWallDistance * direction, m_transform.position.y));
-        Gizmos.color = Color.green;
     }
 }
