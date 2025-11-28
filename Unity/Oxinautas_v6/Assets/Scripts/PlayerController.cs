@@ -147,7 +147,7 @@ public class PlayerController : MonoBehaviour
             }
             else if(counterExtraJumps>0 && canDoubleJump)
             {
-                m_rigidbody2D.linearVelocity = new Vector2(speed * m_gatherInput.ValueX, jumpForce);
+                DoubleJump();
                 counterExtraJumps-=1;
             }
         }
@@ -156,8 +156,7 @@ public class PlayerController : MonoBehaviour
     private void DoubleJump()
     {
         m_animator.SetTrigger(idDoubleJump);
-        // TODO: Double Jump Logic
-        //m_rigidbody2D.linearVelocity = new Vector2(speed * m_gatherInput.ValueX, jumpForce);
+        m_rigidbody2D.linearVelocity = new Vector2(speed * m_gatherInput.ValueX, jumpForce);
     }
     public void Knockback()
     {
