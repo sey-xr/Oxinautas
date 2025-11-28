@@ -30,8 +30,8 @@ public class PlayerController : MonoBehaviour
     [Header("Ground Settings")]
     [SerializeField] private Transform lFoot;
     [SerializeField] private Transform rFoot;
-    RaycastHit2D rFootRay;
-    RaycastHit2D lFootRay;
+    private RaycastHit2D rFootRay;
+    private RaycastHit2D lFootRay;
     [SerializeField] private bool isGrounded;
     [SerializeField] private float rayLength;
     [SerializeField] private LayerMask groundLayer;
@@ -174,7 +174,8 @@ public class PlayerController : MonoBehaviour
         isKnocked = false;
         canBeKnocked = true;
     }
-
+    public void Die() => Destroy(gameObject);
+    
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(m_transform.position, new Vector2(m_transform.position.x + checkWallDistance * direction, m_transform.position.y));
