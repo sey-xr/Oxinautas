@@ -14,7 +14,7 @@ TagManager:
   - Player
   - Ground
   - Ignore
-  - 
+  - Items
   - 
   - 
   - 
@@ -53,7 +53,7 @@ TagManager:
   - name: Enemies
     uniqueID: 3614122169
     locked: 0
-  - name: PowerUps
+  - name: Items
     uniqueID: 4283280931
     locked: 0
   - name: UI

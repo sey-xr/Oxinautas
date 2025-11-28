@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
         rFoot = GameObject.Find("PieD").GetComponent<Transform>();
         lFoot = GameObject.Find("PieI").GetComponent<Transform>();
         counterExtraJumps = extraJumps;
+        GameManager.instance.AddOxygen();
     }
     private void Update()
     {
