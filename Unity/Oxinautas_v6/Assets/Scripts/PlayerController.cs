@@ -68,10 +68,10 @@ public class PlayerController : MonoBehaviour
         idIsWallDetected = Animator.StringToHash("isWallDetected");
         idKnockback = Animator.StringToHash("knockback");
         idDoubleJump = Animator.StringToHash("canDoubleJump");
-        rFoot = GameObject.Find("PieD").GetComponent<Transform>();
-        lFoot = GameObject.Find("PieI").GetComponent<Transform>();
+        // rFoot = GameObject.Find("PieD").GetComponent<Transform>();
+        // lFoot = GameObject.Find("PieI").GetComponent<Transform>();
         counterExtraJumps = extraJumps;
-        GameManager.instance.AddOxygen();
+        GameManager.Instance.AddOxygen();
     }
     private void Update()
     {
