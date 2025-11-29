@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class GatherInput : MonoBehaviour
 {
-    private Controls controls;
+    private Controlls controls;
 
     [SerializeField] private float _valueX;
     public float ValueX { get => _valueX; }
@@ -12,7 +12,7 @@ public class GatherInput : MonoBehaviour
 
     private void Awake()
     {
-        controls = new Controls();
+        controls = new Controlls();
     }
     private void OnEnable()
     {

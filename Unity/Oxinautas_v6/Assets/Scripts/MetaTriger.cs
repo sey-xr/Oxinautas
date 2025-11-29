@@ -1,44 +1,63 @@
 using Unity.Cinemachine;
 using UnityEngine;
 
-public class CustomCamera : MonoBehaviour
+public class MetaTrigger : MonoBehaviour
 {
-    public CinemachineCamera CinemachineCamera;
-    public CinemachinePositionComposer PositionComposer;
-    public CinemachinePositionComposer ScreenPosition;
-    [SerializeField] private float cameraDistance;
+    // [Header("Cinemachine Components")]
+    // public CinemachineCamera CinemachineCamera;
+    // public CinemachinePositionComposer PositionComposer;
+    // public CinemachinePositionComposer ScreenPosition;
+    // [SerializeField] private float cameraDistance;
     // [SerializeField] private float screenPositionX;
     // [SerializeField] private float screenPositionY;
-    [SerializeField] private AnimationClip metaAnimation;
-    private Animation animationComponent;
+    [Header("Meta Animation")]
+    [SerializeField] private string metaTag = "Meta";
+    [SerializeField] private GameObject meta;
+    [SerializeField] private Animator animatorMeta;
+    [SerializeField] private string animatorBool = "Meta";
+    private int _idMeta;
+    
     
     private void Start()
     {
-        PositionComposer = CinemachineCamera.GetComponent<CinemachinePositionComposer>();
-        
-        // Obtener o agregar el componente Animation
-        animationComponent = GetComponent<Animation>();
-        if (animationComponent == null)
+        // PositionComposer = CinemachineCamera.GetComponent<CinemachinePositionComposer>();
+
+        if (meta == null)
         {
-            animationComponent = gameObject.AddComponent<Animation>();
+            meta = GameObject.FindGameObjectWithTag(metaTag);
         }
-        
-        // Agregar el clip de animación
-        if (metaAnimation != null)
+
+        if (meta == null)
         {
-            animationComponent.AddClip(metaAnimation, "Meta");
+            Debug.LogError($"MetaTrigger could not find a GameObject with tag '{metaTag}'.");
+            enabled = false;
+            return;
         }
+
+        animatorMeta = meta.GetComponent<Animator>();
+        if (animatorMeta == null)
+        {
+            Debug.LogError("MetaTrigger requires an Animator on the meta GameObject.");
+            enabled = false;
+            return;
+        }
+
+        _idMeta = Animator.StringToHash(animatorBool);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Trigger Entered");
-        PositionComposer.CameraDistance = cameraDistance;
+        // PositionComposer.CameraDistance = cameraDistance;
         // PositionComposer.Composition.ScreenPosition = new Vector2(screenPositionX, screenPositionY);
         
-        // Reproducir la animación
-        if (metaAnimation != null && animationComponent != null)
+        // Activar animación de meta cuando el player entra
+        if (collision.CompareTag("Player"))
         {
-            animationComponent.Play("Meta");
+            animatorMeta.SetBool(_idMeta, true);
         }
+    }
+    public void MetaFinal()
+    {
+        animatorMeta.SetBool(_idMeta, true);
     }
 }

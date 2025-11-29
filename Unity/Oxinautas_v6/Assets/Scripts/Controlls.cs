@@ -72,7 +72,7 @@ using UnityEngine.InputSystem.Utilities;
 /// }
 /// </code>
 /// </example>
-public partial class @Controls: IInputActionCollection2, IDisposable
+public partial class @Controlls: IInputActionCollection2, IDisposable
 {
     /// <summary>
     /// Provides access to the underlying asset instance.
@@ -82,7 +82,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     /// <summary>
     /// Constructs a new instance.
     /// </summary>
-    public @Controls()
+    public @Controlls()
     {
         asset = InputActionAsset.FromJson(@"{
     ""version"": 1,
@@ -610,9 +610,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Move"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""a39c5284-87cc-4224-a51b-317c4d70d647"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -659,11 +659,11 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ab66a114-4cb7-438e-945d-93ba967cd7d9"",
-                    ""path"": ""<Touchscreen>/Press"",
+                    ""id"": ""65a035a9-2ca3-4d66-bd84-cadd9793e45c"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Touch"",
+                    ""groups"": "";Gamepad"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -746,37 +746,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""1D Axis-touchscreen"",
-                    ""id"": ""b0bd13ea-4ccf-46fa-90e8-c8b0c30267fd"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": ""MultiTap"",
+                    ""name"": """",
+                    ""id"": ""8bfa449c-8060-4c0c-ac03-e57af4624cba"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Gamepad"",
                     ""action"": ""Move"",
-                    ""isComposite"": true,
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""0142a6ad-7680-4284-ab3c-e6318dc13c2f"",
-                    ""path"": ""<Touchscreen>/delta/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Touch"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""3cc7ace4-25ff-469e-9396-2490b109f9c3"",
-                    ""path"": ""<Touchscreen>/delta/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Touch"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -864,10 +842,10 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Punch = m_Player.FindAction("Punch", throwIfNotFound: true);
     }
 
-    ~@Controls()
+    ~@Controlls()
     {
-        UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, Controls.UI.Disable() has not been called.");
-        UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, Controls.Player.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, Controlls.UI.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, Controlls.Player.Disable() has not been called.");
     }
 
     /// <summary>
@@ -958,12 +936,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     /// </summary>
     public struct UIActions
     {
-        private @Controls m_Wrapper;
+        private @Controlls m_Wrapper;
 
         /// <summary>
         /// Construct a new instance of the input action map wrapper class.
         /// </summary>
-        public UIActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public UIActions(@Controlls wrapper) { m_Wrapper = wrapper; }
         /// <summary>
         /// Provides access to the underlying input action "UI/Navigate".
         /// </summary>
@@ -1147,12 +1125,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     /// </summary>
     public struct PlayerActions
     {
-        private @Controls m_Wrapper;
+        private @Controlls m_Wrapper;
 
         /// <summary>
         /// Construct a new instance of the input action map wrapper class.
         /// </summary>
-        public PlayerActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public PlayerActions(@Controlls wrapper) { m_Wrapper = wrapper; }
         /// <summary>
         /// Provides access to the underlying input action "Player/Move".
         /// </summary>

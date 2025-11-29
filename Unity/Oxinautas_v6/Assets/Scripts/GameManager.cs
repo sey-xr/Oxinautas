@@ -9,19 +9,34 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform playerRespawnPoint;
     [SerializeField] private float respawnPlayerDelay;
     [SerializeField] private PlayerController playerController;
+    
+    [Header("Oxygen Settings")]
+    [SerializeField] private int _oxygenCollected;
+    [SerializeField] private int totalOxygen;
+    public int OxygenCollected { get => _oxygenCollected; }
 
     public PlayerController PlayerControllerlayerController => playerController;
 
-    [SerializeField] private int _oxygenCollected;
-    public int OxygenCollected { get => _oxygenCollected; }
+
 
     private void Awake()
     {
         if(Instance == null) Instance = this;
         else Destroy(gameObject);
     }
+    public void Start()
+    {
+        totalOxygenInLevel();
+    }
+
+    private void totalOxygenInLevel()
+    {
+        GameObject[] oxygens = GameObject.FindGameObjectsWithTag("Oxygen");
+        totalOxygen = oxygens.Length;
+    }
+
     public void RespawnPlayer() => StartCoroutine(RespawnPlayerCoroutine());
-    
+
     IEnumerator RespawnPlayerCoroutine()
     {
         yield return new WaitForSeconds(respawnPlayerDelay);
